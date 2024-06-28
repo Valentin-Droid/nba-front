@@ -89,7 +89,9 @@ export default function NbaTeams() {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel asChild>
-                <Button variant="outlined" onClick={() => handleCloseDialog()}>Annuler</Button>
+                <Button variant="outlined" onClick={() => handleCloseDialog()}>
+                  Annuler
+                </Button>
               </AlertDialogCancel>
               <AlertDialogAction asChild>
                 <Button variant="destructive" onClick={() => confirmSignOut()}>
@@ -117,7 +119,7 @@ export default function NbaTeams() {
                     {team.name}
                   </p>
                 </div>
-              )
+              ),
           )}
         </div>
       </div>
