@@ -31,16 +31,17 @@ export default function NbaTeams() {
     });
 
     async function fetchNbaTeams() {
+      setLoading(true);
       try {
-        const res = await fetch("http://localhost:3000/nba/teams");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/nba/teams`);
         if (!res.ok) {
           throw new Error(`HTTP error: ${res.status}`);
         }
         const data = await res.json();
         setTeams(data.response);
-        setLoading(false);
       } catch (error) {
         console.error(error);
+      } finally {
         setLoading(false);
       }
     }
